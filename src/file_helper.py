@@ -22,8 +22,8 @@ def get_download_path():
             location = winreg.QueryValueEx(key, downloads_guid)[0]
         return location
     else:
-        return os.path.join(os.path.expanduser("~"), "downloads")
+        return os.path.join(os.path.expanduser("~"), "Downloads")
 
 
-def to_yaml(items):
-    return yaml.safe_dump(items, allow_unicode=True)
+def csv_to_ordered_dict(_csv):
+    return csv.DictReader(open(_csv))
