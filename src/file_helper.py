@@ -27,3 +27,9 @@ def get_download_path():
 
 def csv_to_ordered_dict(_csv):
     return csv.DictReader(open(_csv))
+
+
+def replace_profile_keys(profile):
+    profile = profile.replace("Access key ID", "aws_access_key_id")
+    profile = profile.replace("Secret access key", "aws_secret_access_key")
+    return profile
