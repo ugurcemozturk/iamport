@@ -1,3 +1,7 @@
+import os
+import csv
+
+
 def get_newest_csv(path):
     """Get latest CSV from given path"""
     files = os.listdir(path)

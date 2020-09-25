@@ -1,6 +1,3 @@
-## Get latest .csv in downloads
-import os
-import csv
 import toml
 import file_helper as fh
 
