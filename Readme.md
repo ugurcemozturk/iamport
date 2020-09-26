@@ -1,6 +1,6 @@
-# Import with Iamport
+# Import with iamport
 
-**Iamport** works no matter your operating system is; Import your external configurations and credentials without extra manual work. It has been built to import AWS IAM configuration by latest downloaded CSV file but should and will be cloud agnostic.
+**iamport** works no matter your operating system is; Import your external configurations and credentials without extra manual work. It has been built to import AWS IAM configuration by latest downloaded CSV file but should and will be cloud agnostic.
 
 # Installation
 
