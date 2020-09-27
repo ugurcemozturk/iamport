@@ -3,12 +3,17 @@ import ntpath
 
 import file_helper as fh
 
+
 def iamport():
     # Get OS-aware downloads folder
     DOWNLOADS_FOLDER = fh.get_download_path()
 
     # assumed that the latest downloaded file is the aws profile as csv
     profile_csv = fh.get_newest_csv(DOWNLOADS_FOLDER)
+
+    if profile_csv is None:
+        print("No csv file found at", DOWNLOADS_FOLDER)
+        return
 
     # Get filename that'll be used as IAM profile name
     profile_name = ntpath.basename(profile_csv).replace(".csv", "")
@@ -31,7 +36,6 @@ def iamport():
     with open(aws_credentials_file, "a+") as aws_file:
         aws_file.writelines("\n" + profile)
         aws_file.close()
-    
+
     print("Imported profile:")
     print(profile)
-        
