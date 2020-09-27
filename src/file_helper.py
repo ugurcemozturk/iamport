@@ -1,12 +1,15 @@
 import os
 import csv
 
+
 def get_newest_csv(path):
     """Get latest CSV from given path"""
     files = os.listdir(path)
     paths = [
         os.path.join(path, basename) for basename in files if basename.endswith(".csv")
     ]
+    if not paths:
+        return None
     return max(paths, key=os.path.getctime)
 
 
@@ -14,11 +17,12 @@ def get_home_dir():
     """Returns OS user home directory"""
     return os.path.expanduser("~")
 
+
 def get_aws_credentials():
     """Returns aws credentials file"""
-    return os.path.join(get_home_dir(),".aws","credentials")
-    
-    
+    return os.path.join(get_home_dir(), ".aws", "credentials")
+
+
 def get_download_path():
     """Returns the default downloads path for linux or windows"""
     if os.name == "nt":
